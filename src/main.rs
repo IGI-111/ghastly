@@ -39,16 +39,19 @@ fn single_sample_specter(samples: Vec<f32>) -> Vec<f32> {
 
 fn main() {
     let gradient = Gradient::new(vec![
-        palette::Rgb::new_u8(0, 0, 0),
-        palette::Rgb::new_u8(0xFF, 0xFF, 0xFF),
+        palette::Rgb::new(0., 0., 0.),
+        palette::Rgb::new(0., 0., 1.),
+        palette::Rgb::new(0., 1., 1.),
+        palette::Rgb::new(1., 1., 0.),
+        palette::Rgb::new(1., 0., 0.),
     ]);
 
     let filename = env::args().skip(1).next().expect("No WAV file specified.");
     let mut reader = WavReader::open(filename).expect("Failed to open WAV file.");
     let signal_len = reader.len() as usize;
 
-    let width = signal_len / 10000;
-    let height = 500;
+    let width = signal_len / 5000;
+    let height = 300;
     let window_size = signal_len / width;
     let pixel_size = window_size / (4 * height);
 
