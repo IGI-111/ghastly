@@ -4,8 +4,9 @@ version = "0.1.0"
 authors = ["IGI-111 <igi.222@gmail.com>"]
 
 [dependencies]
-hound = "*"
-image = "*"
-rustfft = "*"
-num = "*"
-itertools = "*"
+hound = "3.3.0"
+image = "0.18.0"
+rustfft = "2.0.0"
+num = "0.1.41"
+itertools = "0.7.4"
+palette = "0.2.1"
