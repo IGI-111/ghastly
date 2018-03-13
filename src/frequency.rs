@@ -52,7 +52,11 @@ where
             };
             self.backlog += self.freq;
 
-            if next.len() > 0 { Some(next) } else { None }
+            if !next.is_empty() {
+                Some(next)
+            } else {
+                None
+            }
         } else {
             self.backlog += self.freq;
             match self.cur {
@@ -63,7 +67,6 @@ where
         val
     }
 }
-
 
 #[test]
 fn test_one() {
